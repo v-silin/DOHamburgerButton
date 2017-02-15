@@ -34,9 +34,13 @@ public class DOHamburgerButton: UIButton {
     private let middleOpacity_deselect = CAKeyframeAnimation(keyPath: "opacity")
     private let bottomTransform_deselect = CAKeyframeAnimation(keyPath: "transform")
     
+    public var isSelectedChanged: ((Bool) -> ())?
+    
     override public var isSelected : Bool {
         didSet {
             updateLayers()
+            
+            isSelectedChanged?(isSelected)
         }
     }
     
