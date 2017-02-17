@@ -59,12 +59,15 @@ public class DOHamburgerButton: UIButton {
     }
     
     private func createLayers() {
+        let height: CGFloat = 2.0
+        let width: CGFloat = 23.0
+        
         let path: CGPath = {
             let path = CGMutablePath()
             path.move(to: CGPoint(x: 0,
-                                  y: 3.5 / 2))
-            path.move(to: CGPoint(x: 20,
-                                  y: 3.5 / 2))
+                                  y: height / 2))
+            path.addLine(to: CGPoint(x: width,
+                                     y: height / 2))
             
             return path
         }()
@@ -74,11 +77,12 @@ public class DOHamburgerButton: UIButton {
         bottom.path = path
         
         for layer in [ top, middle, bottom ] {
-            layer?.frame = CGRect(x: 12, y: 22 - 3.5 / 2, width: 20, height: 3.5)
+            layer?.frame = CGRect(x: 12, y: 22 - height / 2, width: width, height: height)
             layer?.fillColor = nil
             layer?.strokeColor = UIColor.black.cgColor
-            layer?.lineWidth = 3.5
-            layer?.miterLimit = 3.5
+            layer?.lineWidth = height
+            layer?.miterLimit = height
+            layer?.cornerRadius = height / 2.0
             layer?.lineCap = kCALineCapSquare
             layer?.masksToBounds = true
             layer?.actions = ["transform": NSNull(), "opacity": NSNull()]
