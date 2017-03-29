@@ -99,8 +99,8 @@ public class DOHamburgerButton: UIButton {
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, -7.0, 0.0)),                   //  0/10
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, 1.0, 0.0)),                    //  4/10
             NSValue(caTransform3D: CATransform3DIdentity),                                          //  5/10
-            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(.pi) / 3, 0.0, 0.0, 1.0)),    //  8/10
-            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(.pi) / 4, 0.0, 0.0, 1.0))     // 10/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(Double.pi) / 3, 0.0, 0.0, 1.0)),    //  8/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(Double.pi) / 4, 0.0, 0.0, 1.0))     // 10/10
         ]
         setCommonProperty(topTransform_select)
         
@@ -119,8 +119,8 @@ public class DOHamburgerButton: UIButton {
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, 7.0, 0.0)),                    //  0/10
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, -1.0, 0.0)),                   //  4/10
             NSValue(caTransform3D: CATransform3DIdentity),                                          //  5/10
-            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(.pi) / 3, 0.0, 0.0, 1.0)),   //  8/10
-            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(.pi) / 4, 0.0, 0.0, 1.0))    // 10/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(Double.pi) / 3, 0.0, 0.0, 1.0)),   //  8/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(Double.pi) / 4, 0.0, 0.0, 1.0))    // 10/10
         ]
         setCommonProperty(bottomTransform_select)
         
@@ -129,8 +129,8 @@ public class DOHamburgerButton: UIButton {
         //==============================
         // top animation
         topTransform_deselect.values = [
-            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(.pi) / 4, 0.0, 0.0, 1.0)),                        //  0/10
-            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(.pi) / 4 - CGFloat(.pi) / 3, 0.0, 0.0, 1.0)),    //  4/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(Double.pi) / 4, 0.0, 0.0, 1.0)),                        //  0/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(CGFloat(Double.pi) / 4 - CGFloat(Double.pi) / 3, 0.0, 0.0, 1.0)),    //  4/10
             NSValue(caTransform3D: CATransform3DIdentity),                           //  5/10
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, -9.0, 0.0)),    //  8/10
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, -7.0, 0.0))     // 10/10
@@ -149,8 +149,8 @@ public class DOHamburgerButton: UIButton {
         
         // bottom animation
         bottomTransform_deselect.values = [
-            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(.pi) / 4, 0.0, 0.0, 1.0)),                        //  0/10
-            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(.pi) / 4 + CGFloat(.pi) / 3, 0.0, 0.0, 1.0)),    //  4/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(Double.pi) / 4, 0.0, 0.0, 1.0)),                        //  0/10
+            NSValue(caTransform3D: CATransform3DMakeRotation(-CGFloat(Double.pi) / 4 + CGFloat(Double.pi) / 3, 0.0, 0.0, 1.0)),    //  4/10
             NSValue(caTransform3D: CATransform3DIdentity),                          //  5/10
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, 9.0, 0.0)),    //  8/10
             NSValue(caTransform3D: CATransform3DMakeTranslation(0.0, 7.0, 0.0))     // 10/10
@@ -160,9 +160,9 @@ public class DOHamburgerButton: UIButton {
     
     private func updateLayers() {
         if (isSelected) {
-            top.transform = CATransform3DMakeRotation(CGFloat(.pi) / 4, 0.0, 0.0, 1.0)
+            top.transform = CATransform3DMakeRotation(CGFloat(Double.pi) / 4, 0.0, 0.0, 1.0)
             middle.opacity = 0.0
-            bottom.transform = CATransform3DMakeRotation(-CGFloat(.pi) / 4, 0.0, 0.0, 1.0)
+            bottom.transform = CATransform3DMakeRotation(-CGFloat(Double.pi) / 4, 0.0, 0.0, 1.0)
         } else {
             top.transform = CATransform3DMakeTranslation(0.0, -7.0, 0.0)
             middle.opacity = 1.0
